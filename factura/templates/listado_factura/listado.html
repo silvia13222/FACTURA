@@ -1,0 +1,45 @@
+{% extends 'comun/base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <table class='table table-bordered table.striped'>
+
+      <th>CLIENTE</th>
+      <th>DIRECCIÓN</th>
+      <th>FECHA</th>
+
+    <tr>
+      {% for lineafactura in lineafactura %}
+      <td>{{ lineafactura.factura.cliente_nombre }}</td>
+      <td>{{ lineafactura.factura.cliente_direccion }}</td>
+      <td>{{ lineafactura.factura.fecha_emision }}</td>
+      
+
+    </tr>
+ 
+  {% endfor %}
+    </table>
+    <table border=”0″ cellpadding=”10″ cellspacing=”10″ class=”tabla”>
+            <th>NUM</th>
+            <th>CLIENTE</th>
+            <th>PRODUCTO</th>
+            <th>PRECIO</th>
+            <th>PRECIO REAL</th>
+          <tr>
+            {% for lineafactura in lineafactura %}
+            <td>{{ lineafactura.factura.num }}</td>
+            <lineafactura class="factura">{{num}}</lineafactura>
+            <td>{{ lineafactura.factura.cliente_nombre }}</td>
+          
+            <td>{{ lineafactura.unidades }} - {{ lineafactura.nombre_producto }} </td>
+            <td>{{ lineafactura.precio_unitario }}€</td>
+            <td>{{ lineafactura.precio_compra }}€</td>
+            <lineafactura class="factura">{{precio_unidades}}</lineafactura>
+          </tr>
+
+    </div>
+      {% endfor %}
+    </table>
+</div>
+</div>
+{% endblock content %}
